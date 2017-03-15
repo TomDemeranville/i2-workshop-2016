@@ -39,7 +39,7 @@ Format data about the person’s contirbutions to your platform and post it to h
 
 [//]: # (---------WHAT IS ORCID?---------)
 <a name="1-what-is-orcid"></a>
-#1. WHAT IS ORCID? (30 min) 
+# 1. WHAT IS ORCID? (30 min) 
 _PRESENTATION_ 
 
 [Presented as a power point presentation](https://github.com/ORCID/i2-workshop-2016/blob/master/20160925_TechExWorkshop-Paglione.pdf)
@@ -47,7 +47,7 @@ _PRESENTATION_
 
 [//]: # (---------EXPLORE THE ORCID REGISTRY---------)
 <a name="2-explore-registry"></a>
-#2. EXPLORE THE ORCID REGISTRY (20 min)
+# 2. EXPLORE THE ORCID REGISTRY (20 min)
 _ACTIVITY_
 
 <h2><img width="194" height="336" src="http://alainna.org/orcid/clip_image002.gif" align="right" hspace="12" vspace="12" alt="Screen Shot: ORCID registration screen at https://sandbox.orcid.org/register" /><a name="2.1"></a>2.1 Create an ORCID iD</h2>
@@ -87,7 +87,7 @@ _ACTIVITY_
 
 [//]: # (---------ABOUT THE ORCID APIs---------)
 <a name="3-about-orcid-apis"></a>
-#3. ABOUT THE ORCID APIs (30 min)
+# 3. ABOUT THE ORCID APIs (30 min)
 _PRESENTATION_
 
 <h2><a name="3.1"></a>3.1 ORCID API types &amp; features</h2>
@@ -157,7 +157,7 @@ _PRESENTATION_
 
 [//]: # (---------OAUTH BASICS---------)
 <a name="4-oauth-basics"></a>
-#4. OAUTH BASICS (30 min)
+# 4. OAUTH BASICS (30 min)
 _ACTIVITY_
 
 As discussed in [section 3.1](#3.1), the Public API can only be used to read and search ORCID records, and to  get authenticated ORCID iDs. The Member API, however, can be used to add new  information to ORCID records, as well as to update information previously added. To do these actions, one must obtain permission from the user/data subject. This section describes the standard OAuth process for requesting this permission.
@@ -256,7 +256,7 @@ Endpoint: https://sandbox.orcid.org/oauth/token"
 
 [//]: # (---------THE CROSS-LINK BREAKDOWN---------)
 <a name="5-cross-link-breakdown"></a>
-#5. THE CROSS-LINK BREAKDOWN (15 min)
+# 5. THE CROSS-LINK BREAKDOWN (15 min)
 _PRESENTATION_
 
 The basic steps for cross linking are:
@@ -272,7 +272,7 @@ The basic steps for cross linking are:
 
 [//]: # (---------API CREDENTIAL SETUP---------)
 <a name="6-api-credentials"></a>
-#6. API CREDENTIAL SETUP (30 min)
+# 6. API CREDENTIAL SETUP (30 min)
 _PRESENTATION_
 
 To get started setting up the institutional sign in cross-link process described in the previous section, you'll need to:
@@ -281,7 +281,7 @@ To get started setting up the institutional sign in cross-link process described
 
 **2. Configure identity provider settings for your API credentials**
 
-##6.1 Get ORCID Member API Credentials
+## 6.1 Get ORCID Member API Credentials
 
 To use the ORCID Member API, you'll need credentials consisting of a Client ID (consumer KEY) and Client Secret (consumer SECRET). These work like a username and password that allow your application to access the API.
 
@@ -324,7 +324,7 @@ _For new API credential requests, you can also include this info in the notes se
 
 [//]: # (---------THE USER EXPERIENCE---------)
 <a name="7-user-experience"></a>
-#7. THE USER EXPERIENCE (30 min)
+# 7. THE USER EXPERIENCE (30 min)
 _ACTIVITY_
 
 So far, we've spent most of this tutorial focused on technical aspects of building an ORCID integration. The technical nuts and bolts are important, but the user experience is just as critical in a successful integration. 
@@ -399,12 +399,12 @@ Starting from the samples provided, create your own custom redirect pages.
 
 [//]: # (---------POST AN AFFILIATION TO YOUR UNIVERSITY---------)
 <a name="8-post-affiliation"></a>
-#8. POST AN AFFILIATION TO YOUR UNIVERSITY (50 min)
+# 8. POST A WORK TO THE REGISTRY (50 min)
 _ACTIVITY_
 
-In this section we will try to add and update an affiliation to your Sandbox test ORCID record using the permission that you have already received from earlier exercises.
+In this section we will try to add and update a work to your Sandbox test ORCID record using the permission that you have already received from earlier exercises.
 
-<h2><a name="8.1"></a>8.1 Post an affiliation to your ORCID record</h2>
+<h2><a name="8.1"></a>8.1 Post an work to your ORCID record</h2>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>POST</strong>.<br />&nbsp; </li>
 <li>Click <strong>Add headers</strong> and enter the following values:</li>
@@ -420,7 +420,7 @@ In this section we will try to add and update an affiliation to your Sandbox tes
   <li><strong>Header value:</strong> application/vnd.orcid+xml<br />&nbsp; </li>
 </ul>
 <li>Click <strong>Add</strong> again, then click <strong>Close</strong>.<br />&nbsp; </li>
-<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v1.2/[orcid-id]/affiliations,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v1.2/0000-0002-3791-8427/affiliations)<br />
+<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v1.2/[orcid-id]/works,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v1.2/0000-0002-3791-8427works)<br />
   <br />
   <img src="http://alainna.org/orcid/clip_image042.jpg" alt="" width="392" height="232" border="0" /><br />&nbsp; </li>
 <li>Click <strong>Enter request body</strong>. Here is where you&rsquo;ll enter the XML for the works you wish to  add.<br />&nbsp; </li>
@@ -438,7 +438,7 @@ In this section we will try to add and update an affiliation to your Sandbox tes
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <h2><a name="8.2"></a>8.2 Updating an affiliation</h2>
-<p>In a real-world situation, you may need to update a researcher's affiliation -- when they finish a degree, change departments, or finish a contract. You'll </p>
+<p>In a real-world situation, you may need to update a researcher's work. You'll </p>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>PUT</strong> -- which you need to update the item.<br />&nbsp; </li>
 <li>Click <strong>Enter request body</strong>. This is where you&rsquo;ll  enter the XML for the work that you wish to edit.<br />&nbsp; </li>
@@ -457,7 +457,7 @@ In this section we will try to add and update an affiliation to your Sandbox tes
 
 [//]: # (---------REFERENCE MATERIALS---------)
 <a name="9-reference"></a>
-#9. REFERENCE MATERIALS
+# 9. REFERENCE MATERIALS
 
 <ul>
 <li>See example implementations and workflow guides <a href="https://members.orcid.org" target="_blank">https://members.orcid.org</a><br />&nbsp;</li>
