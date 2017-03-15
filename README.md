@@ -1,20 +1,15 @@
 [//]: # (This document was created for the i2 TechEx Workshop on Sep 25, 2106 in Miami, Fl)
 
 # i2-workshop-2016
-### Internet 2 Tech Exchange, Sept 2016
-## Hands on with the ORCID API: <br />Getting Authenticated ORCID iDs & Permissions Through Your IdP
-
-
-_[see the full agenda](http://meetings.internet2.edu/2016-technology-exchange/detail/10004303/)_
-
-_In February 2016, ORCID enabled IdP SSO for all eduGAIN member institutions, allowing the first direct connection between the systems. More recently, ORCID introduced a process that enables IdPs to request authenticated ORCID iDs and user permissions to access their ORCID record, using a process that requires little programming or custom code for institutions. In this hands-on tutorial each participant will set up such a connection in the ORCID test sandbox site (https://sandbox.orcid.org/signin)._
+### THOR Bootcamp, Helskinki, March 2017
+## Hands on with the ORCID API: <br />Getting Authenticated ORCID iDs, OAuth Permissions and updating records
 
 [//]: # (---------AGENDA---------)
 
 <a name="top"></a>
 
 ## Workshop Agenda (4 hrs)
-###[1. PRESENTATION](#1-what-is-orcid): WHAT IS ORCID? (30 min)
+###1. [PRESENTATION](#1-what-is-orcid): WHAT IS ORCID? (30 min)
 Learn about ORCID and ORCID iDs and how they work. Understand how organizations are using the ORCID registry to collect and display ORCID iDs, and connect and sync information between ORCID records and their own system.
 
 ###[2. ACTIVITY](#2-explore-registry): EXPLORE THE ORCID REGISTRY (20 min)
