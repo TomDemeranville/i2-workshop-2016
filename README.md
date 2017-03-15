@@ -9,31 +9,31 @@
 <a name="top"></a>
 
 ## Workshop Agenda (4 hrs)
-###1. [PRESENTATION](#1-what-is-orcid): WHAT IS ORCID? (30 min)
+### [1. PRESENTATION](#1-what-is-orcid): WHAT IS ORCID? (30 min)
 Learn about ORCID and ORCID iDs and how they work. Understand how organizations are using the ORCID registry to collect and display ORCID iDs, and connect and sync information between ORCID records and their own system.
 
-###[2. ACTIVITY](#2-explore-registry): EXPLORE THE ORCID REGISTRY (20 min)
+### [2. ACTIVITY](#2-explore-registry): EXPLORE THE ORCID REGISTRY (20 min)
 Set up an ORCID iD in our test environment, and explore signing in with your IdP. Understand ORCID’s provenance model and its implications. Learn about the components of an ORCID record, how they get populated, and how they get used.
 
-###[3. PRESENTATION](#3-about-orcid-apis): ABOUT THE ORCID APIs (30 min)
+### [3. PRESENTATION](#3-about-orcid-apis): ABOUT THE ORCID APIs (30 min)
 Discover ORCID API types and features, and understand ORCID’s test environment and the technologies that ORCID uses.
 
-###[4. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
+### [4. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
 ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user permission to access the information stored in his/her ORCID record. In this section you will obtain system client credentials, and execute basic commands to request permission using a basic OAuth 2.0 3-legged flow. (Don’t know what that is? don’t worry! It will be covered in the session.)
 
-###[5. PRESENTATION](#5-cross-link-breakdown): THE CROSS-LINK BREAKDOWN (15 min)
+### [5. PRESENTATION](#5-cross-link-breakdown): THE CROSS-LINK BREAKDOWN (15 min)
 Breakdown of the functionality that we are about setup.
 
-###[6. PRESENTATION](#6-api-credentials): API CREDENTIAL SETUP (30 min)
+### [6. PRESENTATION](#6-api-credentials): API CREDENTIAL SETUP (30 min)
 Set up ORCID Member API credentials to enable IdP cross linking. We will try it out, using Google OAuth playground to simulate the IdP website.
 
-###[7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
+### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
 The technical connection is only part of the overall solution. What should you display to users when they authorize your system to connect with their ORCID records? What you should tell them if they deny your request? Using an ORCID template as a starting point, workshop participants will work together to craft messages and customize templates that will resonate with their audiences.
 
-###[8. ACTIVITY](#8-post-affiliation): POST AN AFFILIATION TO YOUR UNIVERSITY (50 min)
-Format data about the person’s relationship to your institution and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an affiliation relationship changes.
+### [8. ACTIVITY](#8-post-affiliation): POST A WORK TO A RECORD (50 min)
+Format data about the person’s contirbutions to your platform and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an metadata changes.
 
-###[9. REFERENCE MATERIALS](#9-reference)
+### [9. REFERENCE MATERIALS](#9-reference)
 
 --
 
@@ -304,7 +304,7 @@ When requesting credentials, you'll be asked for the following information:
 * <strong>Redirect URIs</strong>: URL(s) in your web application where users should be returned to after they authorize access to their ORCID record data.
 * <strong>Type of credentials</strong>: Basic allows you to read from/write to records, while premium allows read/write access and also lets you register webhooks
 
-##6.2 Configure identity provider settings for your API credentials
+## 6.2 Configure identity provider settings for your API credentials
 At the moment, the process for adding identity provider settings to your API credentials is not automated. 
 
 Instead, please send a request to [support@orcid.org](mailto:support@orcid.org) with the following information:
@@ -335,7 +335,7 @@ In this section, we'll switch directions and discuss some of the key considerati
 2. [Local support resources](local-support-resources)
 3. [Communication](communication)
 
-##7.1 Redirect pages<a id="redirect-pages"></a>
+## 7.1 Redirect pages<a id="redirect-pages"></a>
 While much of the cross-link interaction takes place on the ORCID site, there are (minimally) 2 pages that you'll need to create on your own site:
 
 1. Redirect page - user authorized the connection (this is the page URL that you provide in your API credential registration)
@@ -343,7 +343,7 @@ While much of the cross-link interaction takes place on the ORCID site, there ar
 
 It's important to include messaging and graphics on these pages that help users understand what's happening, and to provide them with resources in case they have questions or run into trouble.
 
-###7.1.1 Redirect page - user authorized the connection
+### 7.1.1 Redirect page - user authorized the connection
 - Confirmation message (optionally, customized with the user's name/ORCID iD)
 - Link/button back to ORCID (use https://orcid.org/my-orcid to send the user to the logged-in view)
 - Contact at your institution for help/questions about ORCID
@@ -353,7 +353,7 @@ It's important to include messaging and graphics on these pages that help users 
 - Link to ORCID user knowledgebase(http://support.orcid.org/knowledgebase/topics/32827-website-user) 
 - [ORCID branding/graphics](https://members.orcid.org/logos-web-graphics)
 
-###7.1.2 Redirect page - user denied permission
+### 7.1.2 Redirect page - user denied permission
 - Message describing what happened (user can log into ORCID with their institutional account, but your institution doesn't know their ORCID iD and can't update their record)
 - Message listing the benefits of connecting an ORCID iD to your institution
 - Button/Link to complete the authorization
@@ -361,7 +361,7 @@ It's important to include messaging and graphics on these pages that help users 
 - Link to resources about how your institution uses ORCID
 - [ORCID branding/graphics](https://members.orcid.org/logos-web-graphics)
 
-##7.2 Local support resources <a id="local-support-resources"></a>
+## 7.2 Local support resources <a id="local-support-resources"></a>
 ORCID's support team can help your users with general ORCID questions and issues, but for help related to your institution's ORCID integration you'll need to create some resources of your own that users can turn to, like:
 
 - Knowledgebase articles
@@ -371,23 +371,23 @@ ORCID's support team can help your users with general ORCID questions and issues
 
 In addition, you should provide users with a local support contact for ORCID-related questions.
 
-###7.2.1 Example resources
+### 7.2.1 Example resources
 - [HKBU tutorial video](https://www.youtube.com/watch?v=Zd5r0PflZE4&feature=youtu.be)
 - [Texas A & M LibGuide](http://tamu.libguides.com/c.php?g=555554&p=3819597)
 - [University of Michigan LibGuide](http://guides.lib.umich.edu/c.php?g=283255&p=1886827)
 
-##7.3 Communications<a id="communications"></a>
+## 7.3 Communications<a id="communications"></a>
 - Plan a communication timeline - make sure that users are aware of your ORCID project and plans well before you launch!
 - Get high-level buy-in; Send communications from dean/provost level channels if possible
 - Promote your ORCID project at libraries, faculty/staff/TA trainings and orientations, campus events, etc
 - Make it an ongoing effort - ensure that new faculty/staff/TAs are in the loop
 
-###7.3.1 Outreach resources
+### 7.3.1 Outreach resources
 We're here to help! Find logos, fliers, videos, presentation, and other downloadable templates that you use to help get the word out about ORCID at:
 [ORCID Outreach Resources](https://members.orcid.org/outreach-resources)
 
 
-##7.4 Activity: Build your own redirect pages!
+## 7.4 Activity: Build your own redirect pages!
 Starting from the samples provided, create your own custom redirect pages.
 
 1. Download [sample-redirect-pages.zip](sample-redirect-pages.zip) to your computer
