@@ -1,6 +1,6 @@
 [//]: # (This document was created for the i2 TechEx Workshop on Sep 25, 2106 in Miami, Fl)
 
-# i2-workshop-2016
+# THOR-Bootcamp-2017
 ### THOR Bootcamp, Helskinki, March 2017
 ## Hands on with the ORCID API: <br />Getting Authenticated ORCID iDs, OAuth Permissions and updating records
 
