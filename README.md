@@ -10,8 +10,10 @@ _[see the full agenda](http://meetings.internet2.edu/2016-technology-exchange/de
 _In February 2016, ORCID enabled IdP SSO for all eduGAIN member institutions, allowing the first direct connection between the systems. More recently, ORCID introduced a process that enables IdPs to request authenticated ORCID iDs and user permissions to access their ORCID record, using a process that requires little programming or custom code for institutions. In this hands-on tutorial each participant will set up such a connection in the ORCID test sandbox site (https://sandbox.orcid.org/signin)._
 
 [//]: # (---------AGENDA---------)
+
 <a name="top"></a>
-##Workshop Agenda (4 hrs)
+
+## Workshop Agenda (4 hrs)
 ###[1. PRESENTATION](#1-what-is-orcid): WHAT IS ORCID? (30 min)
 Learn about ORCID and ORCID iDs and how they work. Understand how organizations are using the ORCID registry to collect and display ORCID iDs, and connect and sync information between ORCID records and their own system.
 
