@@ -20,20 +20,20 @@ Discover ORCID API types and features, and understand ORCID’s test environment
 
 ### [4. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
 ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user permission to access the information stored in his/her ORCID record. In this section you will obtain system client credentials, and execute basic commands to request permission using a basic OAuth 2.0 3-legged flow. (Don’t know what that is? don’t worry! It will be covered in the session.)
-
+<!--
 ### [5. PRESENTATION](#5-cross-link-breakdown): THE CROSS-LINK BREAKDOWN (15 min)
 Breakdown of the functionality that we are about setup.
-
-### [6. PRESENTATION](#6-api-credentials): API CREDENTIAL SETUP (30 min)
+-->
+### [5. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (30 min)
 Set up ORCID Member API credentials to enable IdP cross linking. We will try it out, using Google OAuth playground to simulate the IdP website.
-
+<!--
 ### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
 The technical connection is only part of the overall solution. What should you display to users when they authorize your system to connect with their ORCID records? What you should tell them if they deny your request? Using an ORCID template as a starting point, workshop participants will work together to craft messages and customize templates that will resonate with their audiences.
-
-### [8. ACTIVITY](#8-post-affiliation): POST A WORK TO A RECORD (50 min)
+-->
+### [6. ACTIVITY](#6-post-affiliation): POST A WORK TO A RECORD (50 min)
 Format data about the person’s contirbutions to your platform and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an metadata changes.
 
-### [9. REFERENCE MATERIALS](#9-reference)
+### [7. REFERENCE MATERIALS](#7-reference)
 
 --
 
@@ -292,8 +292,8 @@ The basic steps for cross linking are:
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------API CREDENTIAL SETUP---------)
-<a name="6-api-credentials"></a>
-# 6. API CREDENTIAL SETUP (30 min)
+<a name="5-api-credentials"></a>
+# 5. API CREDENTIAL SETUP (30 min)
 _PRESENTATION_
 <!--
 To get started setting up the cross-link process described in the previous section, you'll need to:
@@ -301,7 +301,7 @@ To get started setting up the cross-link process described in the previous secti
 
 **2. Configure identity provider settings for your API credentials**
 -->
-## 6.1 Get ORCID Member API Credentials
+## 5.1 Get ORCID Member API Credentials
 
 To use the ORCID Member API, you'll need credentials consisting of a Client ID (consumer KEY) and Client Secret (consumer SECRET). These work like a username and password that allow your application to access the API.
 
@@ -424,13 +424,13 @@ Starting from the samples provided, create your own custom redirect pages.
 
 -->
 [//]: # (---------POST AN AFFILIATION TO YOUR UNIVERSITY---------)
-<a name="8-post-affiliation"></a>
-# 8. POST A WORK TO THE REGISTRY (50 min)
+<a name="6-post-affiliation"></a>
+# 6. POST A WORK TO THE REGISTRY (50 min)
 _ACTIVITY_
 
 In this section we will try to add and update a work to your Sandbox test ORCID record using the permission that you have already received from earlier exercises.
 
-<h2><a name="8.1"></a>8.1 Post an work to your ORCID record</h2>
+<h2><a name="6.1"></a>6.1 Post an work to your ORCID record</h2>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>POST</strong>.<br />&nbsp; </li>
 <li>Click <strong>Add headers</strong> and enter the following values:</li>
@@ -482,8 +482,8 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------REFERENCE MATERIALS---------)
-<a name="9-reference"></a>
-# 9. REFERENCE MATERIALS
+<a name="7-reference"></a>
+# 7. REFERENCE MATERIALS
 
 <ul>
 <li>See example implementations and workflow guides <a href="https://members.orcid.org" target="_blank">https://members.orcid.org</a><br />&nbsp;</li>
