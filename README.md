@@ -13,10 +13,13 @@
 Learn about ORCID and ORCID iDs and how they work. Understand how organizations are using the ORCID registry to collect and display ORCID iDs, and connect and sync information between ORCID records and their own system.
 
 ### [2. ACTIVITY](#2-explore-registry): EXPLORE THE ORCID REGISTRY (20 min)
-Set up an ORCID iD in our test environment, and explore signing in with your IdP. Understand ORCID’s provenance model and its implications. Learn about the components of an ORCID record, how they get populated, and how they get used.
+Set up an ORCID iD in our test environment, and explore adding works to your record. Understand ORCID’s provenance model and its implications. Learn about the components of an ORCID record, how they get populated, and how they get used.
 
 ### [3. PRESENTATION](#3-about-orcid-apis): ABOUT THE ORCID APIs (30 min)
 Discover ORCID API types and features, and understand ORCID’s test environment and the technologies that ORCID uses.
+
+### [3. ACTIVITY](#3-public-api): Explore the public API (30 min)
+Use swagger to request records from the public API.  Try reading your test account on the sandbox, and search for identifiers in the live registry.
 
 ### [4. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
 ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user permission to access the information stored in his/her ORCID record. In this section you will obtain system client credentials, and execute basic commands to request permission using a basic OAuth 2.0 3-legged flow. (Don’t know what that is? don’t worry! It will be covered in the session.)
@@ -25,12 +28,12 @@ ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user 
 Breakdown of the functionality that we are about setup.
 -->
 ### [5. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (30 min)
-Set up ORCID Member API credentials to enable IdP cross linking. We will try it out, using Google OAuth playground to simulate the IdP website.
+Set up ORCID Member API credentials to enable record updates. We will try it out, using Google OAuth playground to simulate your website.
 <!--
 ### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
 The technical connection is only part of the overall solution. What should you display to users when they authorize your system to connect with their ORCID records? What you should tell them if they deny your request? Using an ORCID template as a starting point, workshop participants will work together to craft messages and customize templates that will resonate with their audiences.
 -->
-### [6. ACTIVITY](#6-post-affiliation): POST A WORK TO A RECORD (50 min)
+### [6. ACTIVITY](#6-post-affiliation): POST A WORK TO A RECORD (60 min)
 Format data about the person’s contirbutions to your platform and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an metadata changes.
 
 ### [7. REFERENCE MATERIALS](#7-reference)
@@ -171,6 +174,12 @@ TODO: add a link to a presentation here.
 </ol>
 <p>For this workshop, we will  be using the online tool <a href="https://developers.google.com/oauthplayground/">Google OAuth Playground</a>.</p>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+
+<a name="4-public-api"></a>
+# 4. Explore the public API (30 min)
+_ACTIVITY_
+
+TODO: Use swagger to explore the API - read the record for your recently created test account.  Use the live version to search the live registry for a DOI prefix.
 
 [//]: # (---------OAUTH BASICS---------)
 <a name="4-oauth-basics"></a>
@@ -446,13 +455,13 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
   <li><strong>Header value:</strong> application/vnd.orcid+xml<br />&nbsp; </li>
 </ul>
 <li>Click <strong>Add</strong> again, then click <strong>Close</strong>.<br />&nbsp; </li>
-<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v1.2/[orcid-id]/works,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v1.2/0000-0002-3791-8427works)<br />
+<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v2.0/[orcid-id]/works,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427works)<br />
   <br />
   <img src="http://alainna.org/orcid/clip_image042.jpg" alt="" width="392" height="232" border="0" /><br />&nbsp; </li>
 <li>Click <strong>Enter request body</strong>. Here is where you&rsquo;ll enter the XML for the works you wish to  add.<br />&nbsp; </li>
-<li>Visit <a href="https://git.io/vibkI" target="_blank">https://git.io/vibkI</a> and copy the XML in the <strong>Sample Affiliation</strong> section.<br />&nbsp; </li>
+<li>Visit (TODO:add work xml) and copy the XML in the <strong>Sample work</strong> section.<br />&nbsp; </li>
 <li>Paste the copied content into the <strong>Request Body </strong>text box</li>
-<li>Edit the text to reflect your institution. For the disambiguated-organization-identifier, replace XXXXXX with the Ringgold identifier for your institution listed <strong>Ringgold List</strong></li>
+<li>Edit the text to reflect your institution.</li><!-- For the disambiguated-organization-identifier, replace XXXXXX with the Ringgold identifier for your institution listed <strong>Ringgold List</strong></li>-->
 <li>Click <strong>Close</strong>.<br />
   <br />
   <img src="http://alainna.org/orcid/clip_image044.jpg" alt="" width="498" height="275" border="0" /></li><Br />&nbsp;
@@ -463,12 +472,12 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 </ol>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
-<h2><a name="8.2"></a>8.2 Updating an affiliation</h2>
+<h2><a name="8.2"></a>8.2 Updating a work</h2>
 <p>In a real-world situation, you may need to update a researcher's work. You'll </p>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>PUT</strong> -- which you need to update the item.<br />&nbsp; </li>
 <li>Click <strong>Enter request body</strong>. This is where you&rsquo;ll  enter the XML for the work that you wish to edit.<br />&nbsp; </li>
-<li>Visit <a href="http://git.io/vITI9" target="_blank">http://git.io/vITI9</a> and copy the XML in the <strong>Sample Affiliation Updated </strong>section. <b>(Tip: The amended area are lines 14-18, beginning with &lt;end-date&gt;. You can paste it after the &lt;/start-date&gt; in the active Request Body.)</b><br />&nbsp; 
+<li>Visit (TODO:add work xml) and copy the XML in the <strong>Sample work Updated </strong>section. <br />&nbsp; 
 </li>
 <li>Paste the copied content into the <strong>Request Body</strong> field and amend to reflect your institution.</li>
 <li>Click <strong>Close</strong>.<br />&nbsp; 
