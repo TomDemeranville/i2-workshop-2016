@@ -42,6 +42,7 @@ Format data about the person’s contirbutions to your platform and post it to h
 # 1. WHAT IS ORCID? (30 min) 
 _PRESENTATION_ 
 
+TODO: get a new presentation here.
 [Presented as a power point presentation](https://github.com/ORCID/i2-workshop-2016/blob/master/20160925_TechExWorkshop-Paglione.pdf)
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
@@ -74,6 +75,18 @@ _ACTIVITY_
 </ol>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
+<h2><a name="2.3"></a>2.3 Add some works to your record</h2>
+<p>Much of the power of ORCID comes from the connections it makes between Authors and the things they produce.  Works, inlcuding datasets and journal articles can be in several ways:
+<ul>
+<li>Added manually by the user, via the user interface.  Try it now and see how it in action.</li>
+<li>Imported manually from Bibtex by the user, via the user interface.  Bibtex is not very consistent, but widely used, so it is supported for import and export of works.</li>
+<li>Added by the user, via a search and link wizard.  These automate the discovery of works based on thrid party tools.  These wizards include integrations from Crossref, Datacite, Scopus, Web of Science and many more.  These tools do not work in the sandbox environment, but if you have a live record you can try using them there.</li>
+<li>Added by a trusted third party, with the users permission.  This can be at any time after permission is granted, and is often done on publication. We will explore this use case later today.</li>
+</ul> 
+</p>
+<p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+
+<!--
 <h2><a name="2.3"></a>2.3 Connect your new iD with your IdP</h2>
 <p>Since there are over 2.5 million ORCID iDs, many people already have an ORCID iD when they link to their IdP. To experience this process, we will sign out of your test record and start from the prospective of someone who has an iD, and notices that they can sign in with IdP credentials.</p>
 <ol>
@@ -84,11 +97,14 @@ _ACTIVITY_
   <li>On the my-orcid page that appears, notice an orange alert box confirming that the accounts are linked, and suggesting that you connect to the university's account. This is an example, of the cross linking that we will be exploring further today. We will ignore this message for now.</li>
 </ol>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+-->
 
 [//]: # (---------ABOUT THE ORCID APIs---------)
 <a name="3-about-orcid-apis"></a>
 # 3. ABOUT THE ORCID APIs (30 min)
 _PRESENTATION_
+
+TODO: add a link to a presentation here.
 
 <h2><a name="3.1"></a>3.1 ORCID API types &amp; features</h2>
 <p>ORCID offers several APIs (Application Programming Interfaces) that allow your systems to connect to the  ORCID registry, including reading from and writing to ORCID records. Some API  functions are freely available to anyone; others are available to organizations  that financially support ORCID with an annual membership subscription.</p>
@@ -144,11 +160,12 @@ _PRESENTATION_
 <ol>
 <li>Web browser: Firefox (33+), Chrome (38+), Internet Explorer (10+), Safari (6+)<br />&nbsp;</li>
 <li>Internet connection<br />&nbsp;</li>
-<li>Plain text editor: TextEdit (Mac), Notepad++ (Win), or your preferred plain text editor<br />&nbsp;</li>
+<li>Plain text editor: Sublime, TextEdit (Mac), Notepad++ (Win), or your preferred plain text editor<br />&nbsp;</li>
 <li>Software capable of making HTTP requests:</li>
 <ul>
   <li>cURL: free, command-line application available for Mac  or Windows at <a href="http://curl.haxx.se/download.html">http://curl.haxx.se/download.html</a> (pre-installed on most Mac OS versions; accessible within Terminal application)<br />&nbsp;</li>
   <li>Online tools, e.g. <a href="http://hurl.it">hurl.it</a> or <a href="https://developers.google.com/oauthplayground/">Google OAuth Playground</a><br />&nbsp;</li>
+  <li>The ORCID swagger interface, available <a href="https://pub.sandbox.orcid.org/v2.0/">on the sandbox</a> and live registries.  Separate endpoints are available for the public and member APIs.
   <li>Your own web application, in a language such as Java,  Ruby, Python, PHP, etc.</li>
 </ul>
 </ol>
@@ -254,9 +271,13 @@ Endpoint: https://sandbox.orcid.org/oauth/token"
 <div clear="all" />
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
+<!--
 [//]: # (---------THE CROSS-LINK BREAKDOWN---------)
 <a name="5-cross-link-breakdown"></a>
 # 5. THE CROSS-LINK BREAKDOWN (15 min)
+
+TODO: presentation about linking works?
+
 _PRESENTATION_
 
 The basic steps for cross linking are:
@@ -267,20 +288,19 @@ The basic steps for cross linking are:
 4. The IdP processes the permission and provides feedback to the user, in the form of a webpage.
 5. The IdP redirects the user back to the ORCID my-orcid page where (s)he started.
 
-
+-->
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------API CREDENTIAL SETUP---------)
 <a name="6-api-credentials"></a>
 # 6. API CREDENTIAL SETUP (30 min)
 _PRESENTATION_
-
-To get started setting up the institutional sign in cross-link process described in the previous section, you'll need to:
-
+<!--
+To get started setting up the cross-link process described in the previous section, you'll need to:
 **1. Get ORCID Member API credentials** (Not a member? You can use the [ORCID Public API](https://members.orcid.org/api/introduction-orcid-public-api) to get users' ORCID iDs, but you won't be able to update their ORCID records)
 
 **2. Configure identity provider settings for your API credentials**
-
+-->
 ## 6.1 Get ORCID Member API Credentials
 
 To use the ORCID Member API, you'll need credentials consisting of a Client ID (consumer KEY) and Client Secret (consumer SECRET). These work like a username and password that allow your application to access the API.
@@ -304,6 +324,8 @@ When requesting credentials, you'll be asked for the following information:
 * <strong>Redirect URIs</strong>: URL(s) in your web application where users should be returned to after they authorize access to their ORCID record data.
 * <strong>Type of credentials</strong>: Basic allows you to read from/write to records, while premium allows read/write access and also lets you register webhooks
 
+For the purposes of today, we have set up a number of test accounts for you to use. 
+<!--
 ## 6.2 Configure identity provider settings for your API credentials
 At the moment, the process for adding identity provider settings to your API credentials is not automated. 
 
@@ -321,6 +343,9 @@ _For new API credential requests, you can also include this info in the notes se
 
 
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+-->
+
+<!--
 
 [//]: # (---------THE USER EXPERIENCE---------)
 <a name="7-user-experience"></a>
@@ -329,14 +354,14 @@ _ACTIVITY_
 
 So far, we've spent most of this tutorial focused on technical aspects of building an ORCID integration. The technical nuts and bolts are important, but the user experience is just as critical in a successful integration. 
 
-In this section, we'll switch directions and discuss some of the key considerations in making sure that users can connect their ORCID iD to your institution quickly and easily, and that they understand the value of doing so, including:
+In this section, we'll switch directions and discuss some of the key considerations in making sure that users can connect their ORCID iD to your applications quickly and easily, and that they understand the value of doing so, including:
 
 1. [Redirect pages](redirect-pages)
 2. [Local support resources](local-support-resources)
 3. [Communication](communication)
 
 ## 7.1 Redirect pages<a id="redirect-pages"></a>
-While much of the cross-link interaction takes place on the ORCID site, there are (minimally) 2 pages that you'll need to create on your own site:
+There are (minimally) 2 pages that you'll need to create on your own site:
 
 1. Redirect page - user authorized the connection (this is the page URL that you provide in your API credential registration)
 2. Redirect page - user denied permission
@@ -397,6 +422,7 @@ Starting from the samples provided, create your own custom redirect pages.
 4. Save your changes and refresh the pages in your browser to see the results
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
+-->
 [//]: # (---------POST AN AFFILIATION TO YOUR UNIVERSITY---------)
 <a name="8-post-affiliation"></a>
 # 8. POST A WORK TO THE REGISTRY (50 min)
