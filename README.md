@@ -179,7 +179,7 @@ TODO: add a link to a presentation here.
 # 4. Explore the public API (30 min)
 _ACTIVITY_
 
-TODO: Use swagger to explore the API - read the record for your recently created test account.  Use the live version to search the live registry for a DOI prefix.
+TODO: Use swagger to explore the API - read the record for your recently created test account.  Use the live version to search the live registry for a DOI prefix.  Demo orcid swagger js client?
 
 [//]: # (---------OAUTH BASICS---------)
 <a name="4-oauth-basics"></a>
@@ -489,6 +489,16 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 </li>
 <li>Visit  the public view of your Sandbox record at http://sandbox.orcid.org/[Your  sandbox iD] to see the changes to the work in the user interface.</li>
 </ol>
+
+<h2><a name="8.3"></a>8.3 Searching the registry</h2>
+<p>If you run a repository of some kind, you may be interested in seeing who has claimed things from your repository.  Depending on the identifiers you use (for example, DOIs), this may be possible via the Search API.  <a href="https://pub.orcid.org/v2.0/identifiers">A list of supported identifier types</a> can be found through the API.  New identifier types are added to the requistry when requested by ORCID members. If you have a DOI prefix or other means of distinguising your identifiers from others, it may even be possible to find all occurances at once.</p>
+<p>There are some detailed <a href="https://members.orcid.org/api/tutorial/search-orcid-registry">instructions on how to search the registry</a>, complete with examples.  The will work in the browser, or via the google playground and can be done against the live or sandbox environment.</p>
+<ul>
+<li>Try searching the live environment for a DOI or DOI prefix.  To search for a doi you need to use something like<a href="https://pub.orcid.org/v2.0/search/?q=doi-self:10.6084%2FM9.FIGSHARE.4134027.V1">https://pub.orcid.org/v2.0/search/?q=doi-self:10.6084%2FM9.FIGSHARE.4134027.V1</a> (note the / in the DOI is URL encoded to %2F).  To search for a prefix, use something like <a href="https://pub.orcid.org/v2.0/search/?doi-self:10.6084*">https://pub.orcid.org/v2.0/search/?doi-self:10.6084*</a></li>
+<li>Try searching for the work you just added to your test account</li>
+<li>Experiment with other fields</li>
+</ul>
+
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------REFERENCE MATERIALS---------)
