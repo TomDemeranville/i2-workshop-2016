@@ -42,11 +42,10 @@ Format data about the person’s contirbutions to your platform and post it to h
 
 [//]: # (---------WHAT IS ORCID?---------)
 <a name="1-what-is-orcid"></a>
-# 1. WHAT IS ORCID? (30 min) 
+# 1. WHAT IS ORCID? (30-45 mins) 
 _PRESENTATION_ 
 
-TODO: get a new presentation here.
-[Presented as a power point presentation](https://github.com/ORCID/i2-workshop-2016/blob/master/20160925_TechExWorkshop-Paglione.pdf)
+[Presented as a power point presentation - first two sections](https://github.com/TomDemeranville/thor-helsinki-bootcamp-2017/blob/master/Helsinki_Tom_Demeranville_ORCID.pdf)
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------EXPLORE THE ORCID REGISTRY---------)
@@ -107,7 +106,8 @@ _ACTIVITY_
 # 3. ABOUT THE ORCID APIs (30 min)
 _PRESENTATION_
 
-TODO: add a link to a presentation here.
+[Presented as a power point presentation - third section](https://github.com/TomDemeranville/thor-helsinki-bootcamp-2017/blob/master/Helsinki_Tom_Demeranville_ORCID.pdf)
+
 
 <h2><a name="3.1"></a>3.1 ORCID API types &amp; features</h2>
 <p>ORCID offers several APIs (Application Programming Interfaces) that allow your systems to connect to the  ORCID registry, including reading from and writing to ORCID records. Some API  functions are freely available to anyone; others are available to organizations  that financially support ORCID with an annual membership subscription.</p>
@@ -176,10 +176,14 @@ TODO: add a link to a presentation here.
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <a name="4-public-api"></a>
-# 4. Explore the public API (30 min)
+# 4. Explore the public API with swagger(20 min)
 _ACTIVITY_
 
-TODO: Use swagger to explore the API - read the record for your recently created test account.  Use the live version to search the live registry for a DOI prefix.  Demo orcid swagger js client?
+<p>Load up the <a hef="https://pub.sandbox.orcid.org/v2.0/">public API swagger interface</a> and use it to view the metadata for your new test account.  This is a good way of seeing an overview of the API endpoints and the values they return.  Try listing the work summaries and explore the difference between a work summary and a work.</p>
+
+<p>If you are planning on using JSON instead of XML, the swagger interface is the best place to discover how to structure API JSON objects</p>
+<p>Swagger can also be used to generate client libraries in a huge number of languages.  This can be done with <a href="http://editor.swagger.io/">http://editor.swagger.io/</a>. Simply import the swagger JSON url (e.g. https://pub.sandbox.orcid.org/resources/swagger.json) into the tool, then select the client library to generate.  Depending on your use case, this may be a quick way of getting your integration up and running.</p>
+<p>An example of this in action is <a href="https://github.com/ORCID/orcid-js">our bibtex processing library</a> which uses a swagger generated client library to access the API.  </p>
 
 [//]: # (---------OAUTH BASICS---------)
 <a name="4-oauth-basics"></a>
@@ -491,7 +495,8 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 </ol>
 
 <h2><a name="8.3"></a>8.3 Searching the registry</h2>
-<p>If you run a repository of some kind, you may be interested in seeing who has claimed things from your repository.  Depending on the identifiers you use (for example, DOIs), this may be possible via the Search API.  <a href="https://pub.orcid.org/v2.0/identifiers">A list of supported identifier types</a> can be found through the API.  New identifier types are added to the requistry when requested by ORCID members. If you have a DOI prefix or other means of distinguising your identifiers from others, it may even be possible to find all occurances at once.</p>
+<p>If you run a repository of some kind, you may be interested in seeing who has claimed things from your repository.  Depending on the identifiers you use (for example, DOIs), this may be possible via the Search API.  </p>
+<p><a href="https://pub.orcid.org/v2.0/identifiers">A list of supported identifier types</a> can be found through the API.  New identifier types are added to the requistry when requested by ORCID members. If you have a DOI prefix or other means of distinguising your identifiers from others, it may even be possible to find all occurances at once.</p>
 <p>There are some detailed <a href="https://members.orcid.org/api/tutorial/search-orcid-registry">instructions on how to search the registry</a>, complete with examples.  The will work in the browser, or via the google playground and can be done against the live or sandbox environment.</p>
 <ul>
 <li>Try searching the live environment for a DOI or DOI prefix.  To search for a doi you need to use something like<a href="https://pub.orcid.org/v2.0/search/?q=doi-self:10.6084%2FM9.FIGSHARE.4134027.V1">https://pub.orcid.org/v2.0/search/?q=doi-self:10.6084%2FM9.FIGSHARE.4134027.V1</a> (note the / in the DOI is URL encoded to %2F).  To search for a prefix, use something like <a href="https://pub.orcid.org/v2.0/search/?doi-self:10.6084*">https://pub.orcid.org/v2.0/search/?doi-self:10.6084*</a></li>
