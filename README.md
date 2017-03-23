@@ -8,8 +8,8 @@
 
 <a name="top"></a>
 
-## Workshop Agenda (4 hrs)
-### [1. PRESENTATION](#1-what-is-orcid): WHAT IS ORCID? (30 min)
+## Workshop Agenda (3 hrs, 30 mins)
+### [1. PRESENTATION](#1-what-is-orcid): ORCID - the technical perspective. (30 min)
 Learn about ORCID and ORCID iDs and how they work. Understand how organizations are using the ORCID registry to collect and display ORCID iDs, and connect and sync information between ORCID records and their own system.
 
 ### [2. ACTIVITY](#2-explore-registry): EXPLORE THE ORCID REGISTRY (20 min)
@@ -27,7 +27,7 @@ ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user 
 ### [5. PRESENTATION](#5-cross-link-breakdown): THE CROSS-LINK BREAKDOWN (15 min)
 Breakdown of the functionality that we are about setup.
 -->
-### [5. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (30 min)
+### [5. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (10 min)
 Set up ORCID Member API credentials to enable record updates. We will try it out, using Google OAuth playground to simulate your website.
 <!--
 ### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
@@ -238,6 +238,7 @@ As discussed in [section 3.1](#3.1), the Public API can only be used to read and
 <h2><a name="4.3"></a>4.3  Getting permission (an Access Token) to access ORCID records</h2>
 <p>To access an ORCID record via the Member API, you first need to get permission from the owner of the record in the form of an Access Token. ORCID uses the standard protocol, OAuth 2.0, to obtain this permission. Generally there are two steps: </p>
 <ol>
+<li>Decide which scopes you are interested in.  Different scopes enable different actions, like read or update.  Have a look at the <a href="https://members.orcid.org/api/orcid-scopes">list of scopes on the ORCID website</a></li>
 <li>Get an <strong>Authorization Code</strong>.<br />&nbsp; </li>
 <li>Exchange the Authorization Code for an <strong>Access Token</strong>.<br />&nbsp;</li>
 </ol>
