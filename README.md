@@ -50,7 +50,7 @@ _PRESENTATION_
 
 [//]: # (---------EXPLORE THE ORCID REGISTRY---------)
 <a name="2-explore-registry"></a>
-# 2. EXPLORE THE ORCID REGISTRY (20 min)
+# 2. EXPLORE THE ORCID REGISTRY (30 min)
 _ACTIVITY_
 
 <h2><img width="194" height="336" src="http://alainna.org/orcid/clip_image002.gif" align="right" hspace="12" vspace="12" alt="Screen Shot: ORCID registration screen at https://sandbox.orcid.org/register" /><a name="2.1"></a>2.1 Create an ORCID iD</h2>
@@ -80,11 +80,17 @@ _ACTIVITY_
 <h2><a name="2.3"></a>2.3 Add some works to your record</h2>
 <p>Much of the power of ORCID comes from the connections it makes between Authors and the things they produce.  Works, inlcuding datasets and journal articles can be in several ways:
 <ul>
-<li>Added manually by the user, via the user interface.  Try it now and see how it in action.</li>
+<li>Added manually by the user, via the user interface.  </li>
 <li>Imported manually from Bibtex by the user, via the user interface.  Bibtex is not very consistent, but widely used, so it is supported for import and export of works.</li>
-<li>Added by the user, via a search and link wizard.  These automate the discovery of works based on thrid party tools.  These wizards include integrations from Crossref, Datacite, Scopus, Web of Science and many more.  These tools do not work in the sandbox environment, but if you have a live record you can try using them there.</li>
+<li>Added by the user, via a search and link wizard.  These automate the discovery of works based on thrid party tools.  These wizards include integrations from Crossref, Datacite, Scopus, Web of Science and many more.  Not all of these tools work in the sandbox environment.  Two that do work are but the Europe PMC and Scopus tools.</li>
 <li>Added by a trusted third party, with the users permission.  This can be at any time after permission is granted, and is often done on publication. We will explore this use case later today.</li>
 </ul> 
+
+<ol>
+<li>Add a work to your record manually.  Make sure it has an identifier of some kind so we can search for it later today.</li>
+<li>Add a work with the "Europe PMC Test" search and link wizard. Not all search and link wizards work on the sandbox, but this one does.</li>
+<li>Connect to scopus using the search and link wizard. In addition to adding works, the scopus search and link adds the Scopus Identifier to the record.  If you are not an author on Scopus yourself, search for Brown, Josh D. and link to that.  When asked for an email, use the @mailinator.com address you used before.</li>
+</ol>
 </p>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
@@ -145,7 +151,7 @@ _PRESENTATION_
 </ul>
 <p>The sandbox behaves the same  way as the production ORCID Registry with a few exceptions: </p>
 <ul>
-<li>Search &amp; Link tools do not function.<br />&nbsp;</li>
+<li>Search &amp; Link tools do not always function.<br />&nbsp;</li>
 <li>To avoid unintentional spamming, the Sandbox sends  emails only to @mailinator.com addresses. <a href="https://mailinator.com/" target="_blank">Mailinator.com</a> is an inbox testing service  that is free and requires no registration. To receive emails from the Sandbox,  use an @mailinator.com email address when creating Sandbox record(s).<br />&nbsp;</li>
 <li>Links in the top menu bar (For Researchers, For  Organizations, About, etc.) do not function.</li>
 </ul>
@@ -172,7 +178,7 @@ _PRESENTATION_
   <li>Your own web application, in a language such as Java,  Ruby, Python, PHP, etc.</li>
 </ul>
 </ol>
-<p>For this workshop, we will  be using the online tool <a href="https://developers.google.com/oauthplayground/">Google OAuth Playground</a>.</p>
+<p>For this workshop, we will  be using the online tool <a href="https://developers.google.com/oauthplayground/">Google OAuth Playground</a> and the ORCID swagger interface.</p>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <a name="4-public-api"></a>
