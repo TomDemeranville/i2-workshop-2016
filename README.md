@@ -479,7 +479,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
   <li><strong>Header value:</strong> application/vnd.orcid+xml<br />&nbsp; </li>
 </ul>
 <li>Click <strong>Add</strong> again, then click <strong>Close</strong>.<br />&nbsp; </li>
-<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v2.0/[orcid-id]/works,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427work)<br />
+<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v2.0/[orcid-id]/work,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427work)<br />
   <br />
   <img src="http://alainna.org/orcid/clip_image042.jpg" alt="" width="392" height="232" border="0" /><br />&nbsp; </li>
 <li>Click <strong>Enter request body</strong>. Here is where you&rsquo;ll enter the XML for the works you wish to  add.<br />&nbsp; </li>
@@ -497,11 +497,12 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <h2><a name="7.3"></a>7.3 Updating a work</h2>
-<p>In a real-world situation, you may need to update a researcher's work. You'll </p>
+<p>In a real-world situation, you may need to update a researcher's work. Updating uses PUT instead of POST and requires the activity put code.</p>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>PUT</strong> -- which you need to update the item.<br />&nbsp; </li>
+<li>Change the endpoint: https://api.sandbox.orcid.org/v2.0/[orcid-id]/work/[put-code].  The put-code was returned as a Location header in the response to the create POST.  e.g. Location: https://api.sandbox.orcid.org/v2.0/0000-0001-6363-5714/work/783113 has the put code '783113'.  If you no longer have this number on your screen, you can find it by GETing the users work summary and locating the work you added.  The put-code is an attribute of the work element.
 <li>Click <strong>Enter request body</strong>. This is where you&rsquo;ll  enter the XML for the work that you wish to edit.<br />&nbsp; </li>
-<li>Visit (TODO:add work xml) and copy the XML in the <strong>Sample work Updated </strong>section. <br />&nbsp; 
+<li>Modify the <a href="sample-work-blank.xml">sample work XML</a><b>Make sure you add the put-code="" attribute to the &lt;work:work&gt; element</b>.<br />&nbsp; 
 </li>
 <li>Paste the copied content into the <strong>Request Body</strong> field and amend to reflect your institution.</li>
 <li>Click <strong>Close</strong>.<br />&nbsp; 
@@ -523,6 +524,9 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <li>Experiment with other fields</li>
 </ul>
 
+<h2><a name="7.4"></a>7.4 More!</h2>
+<p>If you have time, there is an <a href="https://github.com/ORCID/ORCID-Source/blob/master/orcid-model/src/main/resources/record_2.0/README.md#add-record-items">v2.0 API guide with XML samples and curl requests</a> that you can use to add employment activities, external identifiers, biography elements and more.</p>
+
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------REFERENCE MATERIALS---------)
@@ -532,6 +536,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <ul>
 <li>See example implementations and workflow guides <a href="https://members.orcid.org" target="_blank">https://members.orcid.org</a><br />&nbsp;</li>
 <li>Read technical documentation <a href="https://members.orcid.org/api" target="_blank">https://members.orcid.org/api</a><br />&nbsp;</li>
+<li><a href="https://github.com/ORCID/ORCID-Source/blob/master/orcid-model/src/main/resources/record_2.0/README.md#add-record-items">v2.0 API guide with XML samples and curl requests</a></li>
 <li>Join the ORCID API Users Group <a href="https://groups.google.com/group/orcid-api-users" target="_parent">https://groups.google.com/group/orcid-api-users</a><br />&nbsp;</li>
 <li>Sign up for a Technical Webinar <a href="https://members.orcid.org/event-list">https://members.orcid.org/event-list</a><br />&nbsp;</li>
 <li>Email the ORCID Community Engagement & Support <a href="mailto:support@orcid.org">support@orcid.org</a></li>
