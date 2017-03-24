@@ -460,10 +460,10 @@ _ACTIVITY_
 In this section we will try to add and update a work to your Sandbox test ORCID record using the permission that you have already received from earlier exercises.
 
 <h2><a name="7.2"></a>7.1 Anatomy of a work</h2>
-<p>Take a look at <a href="sample-work.xml">a sample work that was retrieved from the ORCID API.  This contains information provided by the <i>source</i> of the information, and information added by ORCID, such as the creation date.  It also includes a "putCode" which is the unique identifier for the work within ORCID.  This is needed to update the work or request the full work details instead of a work summary.</p>
-<p>Take a look at <a href="sample-work-blank.xml">this 'blank' work</a>.  This has placeholders for the XML you need to post to create a work.  Note that it does not include the fields added by ORCID seen above</p>
+<p>Take a look at <a href="sample-work.xml">a sample work</a> that was retrieved from the ORCID API.  This contains information provided by the <i>source</i> of the information, and information added by ORCID, such as the creation date.  It also includes a "putCode" which is the unique identifier for the work within ORCID.  This is needed to update the work or request the full work details instead of a work summary.</p>
+<p>Take a look at <a href="sample-work-blank.xml">this partially populated 'blank' work</a>.  This has placeholders for the XML you need to post to create a work.  Note that it does not include the fields added by ORCID seen above.</p>
 
-<h2><a name="7.2"></a>7.2 Post an work to your ORCID record</h2>
+<h2><a name="7.2"></a>7.2 Post a work to your ORCID record</h2>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>POST</strong>.<br />&nbsp; </li>
 <li>Click <strong>Add headers</strong> and enter the following values:</li>
