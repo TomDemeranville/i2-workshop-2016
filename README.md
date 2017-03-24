@@ -297,6 +297,7 @@ Endpoint: https://sandbox.orcid.org/oauth/token"
 <h2><a name="5.5"></a>5.5  Congratulations.  You now have an authenticated ORCID</h2>
 <p>Well done.  For integrations that just require ORCID ids for their own systems and don't intend to update the registry, this is all that is needed.  Implementing this on your own system should be easy!</p>
 
+<a href="https://developers.google.com/oauthplayground/#step1&url=https%3A%2F%2F&content_type=application%2Fjson&http_method=GET&useDefaultOauthCred=unchecked&oauthEndpointSelect=Custom&oauthAuthEndpointValue=https%3A%2F%2Fsandbox.orcid.org%2Foauth%2Fauthorize&oauthTokenEndpointValue=https%3A%2F%2Fsandbox.orcid.org%2Foauth%2Ftoken&oauthClientId=APP-E422WM33OPZWKKMQ&oauthClientSecret=ae857cfb-446b-4c3f-8a09-55436bf602dc&includeCredentials=checked&accessTokenType=bearer&autoRefreshToken=unchecked&accessType=offline&prompt=consent&response_type=code">A preconfigured playground if you're having trouble</a>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <!--
@@ -316,8 +317,8 @@ The basic steps for cross linking are:
 4. The IdP processes the permission and provides feedback to the user, in the form of a webpage.
 5. The IdP redirects the user back to the ORCID my-orcid page where (s)he started.
 
--->
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+-->
 
 [//]: # (---------API CREDENTIAL SETUP---------)
 <a name="6-api-credentials"></a>
@@ -329,7 +330,7 @@ To get started setting up the cross-link process described in the previous secti
 
 **2. Configure identity provider settings for your API credentials**
 -->
-## 6.1 Get ORCID Member API Credentials
+## 6.1 How to get ORCID Member API Credentials
 
 To use the ORCID Member API, you'll need credentials consisting of a Client ID (consumer KEY) and Client Secret (consumer SECRET). These work like a username and password that allow your application to access the API.
 
@@ -458,7 +459,11 @@ _ACTIVITY_
 
 In this section we will try to add and update a work to your Sandbox test ORCID record using the permission that you have already received from earlier exercises.
 
-<h2><a name="7.1"></a>7.1 Post an work to your ORCID record</h2>
+<h2><a name="7.2"></a>7.1 Anatomy of a work</h2>
+<p>Take a look at <a href="sample-work.xml">a sample work that was retrieved from the ORCID API.  This contains information provided by the <i>source</i> of the information, and information added by ORCID, such as the creation date.  It also includes a "putCode" which is the unique identifier for the work within ORCID.  This is needed to update the work or request the full work details instead of a work summary.</p>
+<p>Take a look at <a href="sample-work-blank.xml">this 'blank' work</a>.  This has placeholders for the XML you need to post to create a work.  Note that it does not include the fields added by ORCID seen above</p>
+
+<h2><a name="7.2"></a>7.2 Post an work to your ORCID record</h2>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>POST</strong>.<br />&nbsp; </li>
 <li>Click <strong>Add headers</strong> and enter the following values:</li>
@@ -474,11 +479,11 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
   <li><strong>Header value:</strong> application/vnd.orcid+xml<br />&nbsp; </li>
 </ul>
 <li>Click <strong>Add</strong> again, then click <strong>Close</strong>.<br />&nbsp; </li>
-<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v2.0/[orcid-id]/works,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427works)<br />
+<li>In the <strong>Request  URI</strong> field, enter https://api.sandbox.orcid.org/v2.0/[orcid-id]/works,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier  (ex: https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427work)<br />
   <br />
   <img src="http://alainna.org/orcid/clip_image042.jpg" alt="" width="392" height="232" border="0" /><br />&nbsp; </li>
 <li>Click <strong>Enter request body</strong>. Here is where you&rsquo;ll enter the XML for the works you wish to  add.<br />&nbsp; </li>
-<li>Visit (TODO:add work xml) and copy the XML in the <strong>Sample work</strong> section.<br />&nbsp; </li>
+<li>Copy the <a href="sample-work-blank.xml">sample work XML</a> in the <strong>Sample work</strong> section.<br />&nbsp; </li>
 <li>Paste the copied content into the <strong>Request Body </strong>text box</li>
 <li>Edit the text to reflect your institution.</li><!-- For the disambiguated-organization-identifier, replace XXXXXX with the Ringgold identifier for your institution listed <strong>Ringgold List</strong></li>-->
 <li>Click <strong>Close</strong>.<br />
@@ -491,7 +496,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 </ol>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
-<h2><a name="7.2"></a>7.2 Updating a work</h2>
+<h2><a name="7.3"></a>7.3 Updating a work</h2>
 <p>In a real-world situation, you may need to update a researcher's work. You'll </p>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>PUT</strong> -- which you need to update the item.<br />&nbsp; </li>
@@ -508,7 +513,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <li>Visit  the public view of your Sandbox record at http://sandbox.orcid.org/[Your  sandbox iD] to see the changes to the work in the user interface.</li>
 </ol>
 
-<h2><a name="7.3"></a>7.3 Searching the registry</h2>
+<h2><a name="7.4"></a>7.4 Searching the registry</h2>
 <p>If you run a repository of some kind, you may be interested in seeing who has claimed things from your repository.  Depending on the identifiers you use (for example, DOIs), this may be possible via the Search API.  </p>
 <p><a href="https://pub.orcid.org/v2.0/identifiers">A list of supported identifier types</a> can be found through the API.  New identifier types are added to the requistry when requested by ORCID members. If you have a DOI prefix or other means of distinguising your identifiers from others, it may even be possible to find all occurances at once.</p>
 <p>There are some detailed <a href="https://members.orcid.org/api/tutorial/search-orcid-registry">instructions on how to search the registry</a>, complete with examples.  The will work in the browser, or via the google playground and can be done against the live or sandbox environment.</p>

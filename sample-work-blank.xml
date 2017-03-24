@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<work:work xmlns:work="http://www.orcid.org/ns/work"  xmlns:common="http://www.orcid.org/ns/common" visibility="public">
+      <work:title>
+            <common:title>EXAMPLE TITLE</common:title>
+      </work:title>
+      <work:citation>
+            <work:citation-type>formatted-unspecified</work:citation-type>
+            <work:citation-value>EXAMPLE CITATION</work:citation-value>
+      </work:citation>
+      <work:type>journal-article</work:type>
+      <common:publication-date>
+            <common:year>2017</common:year>
+      </common:publication-date>
+      <common:external-ids>
+            <common:external-id>
+                  <common:external-id-type>doi</common:external-id-type>
+                  <common:external-id-value>10.1234/1234</common:external-id-value>
+                  <common:external-id-relationship>self</common:external-id-relationship>
+            </common:external-id>
+      </common:external-ids>
+      <work:url>http://example.com</work:url>
+      <work:contributors>
+            <work:contributor>
+                  <work:credit-name>EXAMPLE NAME</work:credit-name>
+                  <work:contributor-attributes>
+                        <work:contributor-sequence>first</work:contributor-sequence>
+                        <work:contributor-role>author</work:contributor-role>
+                  </work:contributor-attributes>
+            </work:contributor>
+            <work:contributor>
+                  <work:credit-name>EXAMPLE CO-AUTHOR</work:credit-name>
+                  <work:contributor-attributes>
+                        <work:contributor-sequence>second</work:contributor-sequence>
+                        <work:contributor-role>author</work:contributor-role>
+                  </work:contributor-attributes>
+            </work:contributor>
+      </work:contributors>
+</work:work>
