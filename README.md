@@ -18,25 +18,25 @@ Set up an ORCID iD in our test environment, and explore adding works to your rec
 ### [3. PRESENTATION](#3-about-orcid-apis): ABOUT THE ORCID APIs (30 min)
 Discover ORCID API types and features, and understand ORCID’s test environment and the technologies that ORCID uses.
 
-### [4. ACTIVITY](#3-public-api): Explore the public API (30 min)
+### [4. ACTIVITY](#4-public-api): Explore the public API (30 min)
 Use swagger to request records from the public API.  Try reading your test account on the sandbox, and search for identifiers in the live registry.
 
-### [5. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
+### [5. ACTIVITY](#5-oauth-basics): OAUTH BASICS (30 min)
 ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user permission to access the information stored in his/her ORCID record. In this section you will obtain system client credentials, and execute basic commands to request permission using a basic OAuth 2.0 3-legged flow. (Don’t know what that is? don’t worry! It will be covered in the session.)
 <!--
 ### [5. PRESENTATION](#5-cross-link-breakdown): THE CROSS-LINK BREAKDOWN (15 min)
 Breakdown of the functionality that we are about setup.
 -->
-### [6. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (10 min)
+### [6. PRESENTATION](#6-api-credentials): API CREDENTIAL SETUP (10 min)
 Set up ORCID Member API credentials to enable record updates. We will try it out, using Google OAuth playground to simulate your website.
 <!--
 ### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
 The technical connection is only part of the overall solution. What should you display to users when they authorize your system to connect with their ORCID records? What you should tell them if they deny your request? Using an ORCID template as a starting point, workshop participants will work together to craft messages and customize templates that will resonate with their audiences.
 -->
-### [7. ACTIVITY](#6-post-affiliation): POST A WORK TO A RECORD (60 min)
+### [7. ACTIVITY](#7-post-affiliation): POST A WORK TO A RECORD (60 min)
 Format data about the person’s contirbutions to your platform and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an metadata changes.
 
-### [8. REFERENCE MATERIALS](#7-reference)
+### [8. REFERENCE MATERIALS](#8-reference)
 
 --
 
@@ -312,7 +312,7 @@ The basic steps for cross linking are:
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------API CREDENTIAL SETUP---------)
-<a name="5-api-credentials"></a>
+<a name="6-api-credentials"></a>
 # 6. API CREDENTIAL SETUP (30 min)
 _PRESENTATION_
 <!--
@@ -444,7 +444,7 @@ Starting from the samples provided, create your own custom redirect pages.
 
 -->
 [//]: # (---------POST AN AFFILIATION TO YOUR UNIVERSITY---------)
-<a name="6-post-affiliation"></a>
+<a name="7-post-affiliation"></a>
 # 7. POST A WORK TO THE REGISTRY (50 min)
 _ACTIVITY_
 
@@ -513,7 +513,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 [//]: # (---------REFERENCE MATERIALS---------)
-<a name="7-reference"></a>
+<a name="8-reference"></a>
 # 8. REFERENCE MATERIALS
 
 <ul>
