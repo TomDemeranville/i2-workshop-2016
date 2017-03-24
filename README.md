@@ -185,7 +185,13 @@ _PRESENTATION_
 # 4. Explore the public API with swagger(20 min)
 _ACTIVITY_
 
-<p>Load up the <a href="https://pub.sandbox.orcid.org/v2.0/">public API swagger interface</a> and use it to view the metadata for your new test account.  This is a good way of seeing an overview of the API endpoints and the values they return.  Try listing the work summaries and explore the difference between a work summary and a work.</p>
+<p>Load up the <a href="https://pub.sandbox.orcid.org/v2.0/">public API swagger interface</a> and use it to view the metadata for your new test account.  This is a good way of seeing an overview of the API endpoints and the values they return.
+
+<ol>
+<li>Use the "Public API v2.0" to list the works. Explore the difference between a work summary and a work.</li>
+<li>The "activities" endpoint lists all ORCID activities for an ID, including works, education, employment and funding.  Request it for your account and see how it behaves.</li>
+<li>If a record has more than one work with the same identifier, the API 'groups' them together.  Add a duplicate work to your test account and see how it looks in the API</li>
+</ol>
 
 <p>If you are planning on using JSON instead of XML, the swagger interface is the best place to discover how to structure API JSON objects</p>
 <p>Swagger can also be used to generate client libraries in a huge number of languages.  This can be done with <a href="http://editor.swagger.io/">http://editor.swagger.io/</a>. Simply import the swagger JSON url (e.g. https://pub.sandbox.orcid.org/resources/swagger.json) into the tool, then select the client library to generate.  Depending on your use case, this may be a quick way of getting your integration up and running.</p>
@@ -198,7 +204,7 @@ _ACTIVITY_
 
 As discussed in [section 3.1](#3.1), the Public API can only be used to read and search ORCID records, and to  get authenticated ORCID iDs. The Member API, however, can be used to add new  information to ORCID records, as well as to update information previously added. To do these actions, one must obtain permission from the user/data subject. This section describes the standard OAuth process for requesting this permission.
 <h2><a name="5.1"></a>5.1  Accessing the Sandbox Member API</h2>
-<p>Client credentials consisting of a client ID and a client secret are needed in order to access the Member API. Client Credentials for the Member APIs are issued by ORCID. For this workshop, you can use the sample Sandbox Client Credentials, but we recommend that you obtain your own Member API Sandbox Client Credentials using the request form at <a href="https://orcid.org/content/register-client-application" target="_blank">https://orcid.org/content/register-client-application</a> for experimentation and testing that you do outside of this workshop.</p>
+<p>Client credentials consisting of a client ID and a client secret are needed in order to access the Member API. Client Credentials for the Member APIs are issued by ORCID. <b>For this workshop, you can use the sample Sandbox Client Credentials</b>, but we recommend that you obtain your own Member API Sandbox Client Credentials.  How to do this is discussed in <a href="6-api-credentials">section 6.</a></p>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <h2><a name="5.2"></a>5.2 Setting up the OAuth Playground</h2>
@@ -248,16 +254,14 @@ As discussed in [section 3.1](#3.1), the Public API can only be used to read and
 <h2><a name="5.3"></a>5.3  Getting permission (an Access Token) to access ORCID records</h2>
 <p>To access an ORCID record via the Member API, you first need to get permission from the owner of the record in the form of an Access Token. ORCID uses the standard protocol, OAuth 2.0, to obtain this permission. Generally there are two steps: </p>
 <ol>
-<li>Decide which scopes you are interested in.  Different scopes enable different actions, like read or update.  Have a look at the <a href="https://members.orcid.org/api/orcid-scopes">list of scopes on the ORCID website</a></li>
+<li>Decide which scopes you are interested in.  Different scopes enable different actions, like read or update.  Have a look at the <a href="https://members.orcid.org/api/orcid-scopes">list of scopes on the ORCID website</a>.  For this excercise we will use "/activities/update"</li>
 <li>Get an <strong>Authorization Code</strong>.<br />&nbsp; </li>
 <li>Exchange the Authorization Code for an <strong>Access Token</strong>.<br />&nbsp;</li>
 </ol>
 <h3><a name="h.uzsp2l9oif0z" id="h.uzsp2l9oif0z"></a>4.3.1 Get an Authorization Code</h3>
 <p>To get an Authorization Code, you&rsquo;ll need to prompt the user to sign into his/her ORCID account and  grant permission to your application. In a real-world situation, this is done using an authorization URL that you construct. This URL looks something like</p>
 
-```
-https://sandbox.orcid.org/oauth/authorize?client_id=[your client ID]&response_type=code&scope=/activities/update&redirect_uri=https://developers.google.com/oauthplayground
-```
+  https://sandbox.orcid.org/oauth/authorize?client_id=[your client ID]&response_type=code&scope=/activities/update&redirect_uri=https://developers.google.com/oauthplayground
 
 <img src="http://alainna.org/orcid/clip_image033.jpg" alt="Screen shot: Google OAuth Playground, Step 1 - adding the scope variable, and clicking the 'Authorize API' button." width="288" align="right" hspace="12" vspace="12" /><p>With the OAuth Playground, however, this step is done by configuring some additional settings and clicking a button.</p>
 <ol>
@@ -267,7 +271,7 @@ https://sandbox.orcid.org/oauth/authorize?client_id=[your client ID]&response_ty
 <li>Clicking <strong>Authorize</strong> will send the user back to the OAuth Playground. A 6-character code will appear in the <strong>Authorization Code </strong>field.<br />&nbsp;</li>
 </ol>
 
-<h3><a name="5.3.2"></a>5.3.2  Exchange the Authorization Code for an Access Token</h3>
+<h3><a name="5.4"></a>5.4  Exchange the Authorization Code for an Access Token</h3>
 <p>Once you have an  Authorization Code, you can exchange it for an Access Token, which allows you  to read from/write to a user&rsquo;s ORCID record. In a real-world situation, this  exchange would be done by your system, using a programming language such as  PHP, Java, or Ruby on Rails. This call is a RESTful call with information similar to the following</p>
 
 <img src="http://alainna.org/orcid/clip_image036.gif" alt="Screen shot: Google OAuth Playground, Step 2 - exchanging the authorization code for tokens - after exchanging the code, the access and refresh tokens are visible." width="288" align="right" hspace="12" vspace="12" />
@@ -289,6 +293,10 @@ Endpoint: https://sandbox.orcid.org/oauth/token"
 <li><img src="http://alainna.org/orcid/clip_image038.jpg" alt="Screen shot: the request/response section on the right side of the screen displays access token details." width="288" align="right" border="0" />Note that you are provided with additional information in the <strong>Request/Response </strong>section on the right side of the screen, such as the name and ORCID iD of the user who granted permission, the lifespan of the token (20 years), and the scope for  which the token is valid.<br />&nbsp; <br />&nbsp; </li>
 </ol>
 <div clear="all" />
+
+<h2><a name="5.5"></a>5.5  Congratulations.  You now have an authenticated ORCID</h2>
+<p>Well done.  For integrations that just require ORCID ids for their own systems and don't intend to update the registry, this is all that is needed.  Implementing this on your own system should be easy!</p>
+
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
 <!--
