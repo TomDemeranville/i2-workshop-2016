@@ -18,25 +18,25 @@ Set up an ORCID iD in our test environment, and explore adding works to your rec
 ### [3. PRESENTATION](#3-about-orcid-apis): ABOUT THE ORCID APIs (30 min)
 Discover ORCID API types and features, and understand ORCID’s test environment and the technologies that ORCID uses.
 
-### [3. ACTIVITY](#3-public-api): Explore the public API (30 min)
+### [4. ACTIVITY](#3-public-api): Explore the public API (30 min)
 Use swagger to request records from the public API.  Try reading your test account on the sandbox, and search for identifiers in the live registry.
 
-### [4. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
+### [5. ACTIVITY](#4-oauth-basics): OAUTH BASICS (30 min)
 ORCID’s API uses OAuth 2.0 as its protocol for a system client to obtain user permission to access the information stored in his/her ORCID record. In this section you will obtain system client credentials, and execute basic commands to request permission using a basic OAuth 2.0 3-legged flow. (Don’t know what that is? don’t worry! It will be covered in the session.)
 <!--
 ### [5. PRESENTATION](#5-cross-link-breakdown): THE CROSS-LINK BREAKDOWN (15 min)
 Breakdown of the functionality that we are about setup.
 -->
-### [5. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (10 min)
+### [6. PRESENTATION](#5-api-credentials): API CREDENTIAL SETUP (10 min)
 Set up ORCID Member API credentials to enable record updates. We will try it out, using Google OAuth playground to simulate your website.
 <!--
 ### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
 The technical connection is only part of the overall solution. What should you display to users when they authorize your system to connect with their ORCID records? What you should tell them if they deny your request? Using an ORCID template as a starting point, workshop participants will work together to craft messages and customize templates that will resonate with their audiences.
 -->
-### [6. ACTIVITY](#6-post-affiliation): POST A WORK TO A RECORD (60 min)
+### [7. ACTIVITY](#6-post-affiliation): POST A WORK TO A RECORD (60 min)
 Format data about the person’s contirbutions to your platform and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an metadata changes.
 
-### [7. REFERENCE MATERIALS](#7-reference)
+### [8. REFERENCE MATERIALS](#7-reference)
 
 --
 
@@ -185,23 +185,23 @@ _PRESENTATION_
 # 4. Explore the public API with swagger(20 min)
 _ACTIVITY_
 
-<p>Load up the <a hef="https://pub.sandbox.orcid.org/v2.0/">public API swagger interface</a> and use it to view the metadata for your new test account.  This is a good way of seeing an overview of the API endpoints and the values they return.  Try listing the work summaries and explore the difference between a work summary and a work.</p>
+<p>Load up the <a href="https://pub.sandbox.orcid.org/v2.0/">public API swagger interface</a> and use it to view the metadata for your new test account.  This is a good way of seeing an overview of the API endpoints and the values they return.  Try listing the work summaries and explore the difference between a work summary and a work.</p>
 
 <p>If you are planning on using JSON instead of XML, the swagger interface is the best place to discover how to structure API JSON objects</p>
 <p>Swagger can also be used to generate client libraries in a huge number of languages.  This can be done with <a href="http://editor.swagger.io/">http://editor.swagger.io/</a>. Simply import the swagger JSON url (e.g. https://pub.sandbox.orcid.org/resources/swagger.json) into the tool, then select the client library to generate.  Depending on your use case, this may be a quick way of getting your integration up and running.</p>
 <p>An example of this in action is <a href="https://github.com/ORCID/orcid-js">our bibtex processing library</a> which uses a swagger generated client library to access the API.  </p>
 
 [//]: # (---------OAUTH BASICS---------)
-<a name="4-oauth-basics"></a>
-# 4. OAUTH BASICS (30 min)
+<a name="5-oauth-basics"></a>
+# 5. OAUTH BASICS (30 min)
 _ACTIVITY_
 
 As discussed in [section 3.1](#3.1), the Public API can only be used to read and search ORCID records, and to  get authenticated ORCID iDs. The Member API, however, can be used to add new  information to ORCID records, as well as to update information previously added. To do these actions, one must obtain permission from the user/data subject. This section describes the standard OAuth process for requesting this permission.
-<h2><a name="4.1"></a>4.1  Accessing the Sandbox Member API</h2>
+<h2><a name="5.1"></a>5.1  Accessing the Sandbox Member API</h2>
 <p>Client credentials consisting of a client ID and a client secret are needed in order to access the Member API. Client Credentials for the Member APIs are issued by ORCID. For this workshop, you can use the sample Sandbox Client Credentials, but we recommend that you obtain your own Member API Sandbox Client Credentials using the request form at <a href="https://orcid.org/content/register-client-application" target="_blank">https://orcid.org/content/register-client-application</a> for experimentation and testing that you do outside of this workshop.</p>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
-<h2><a name="4.2"></a>4.2 Setting up the OAuth Playground</h2>
+<h2><a name="5.2"></a>5.2 Setting up the OAuth Playground</h2>
 <p>We&rsquo;ll use the Google Developers&rsquo; OAuth Playground for the next exercises. To get started, we will need to configure the environment to work with the ORCID Member API.</p>
 <ol>
 <li>Visit <a href="https://developers.google.com/oauthplayground" target="_blank">https://developers.google.com/oauthplayground</a><br />&nbsp; </li>
@@ -245,7 +245,7 @@ As discussed in [section 3.1](#3.1), the Public API can only be used to read and
 <div clear="all" />
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
-<h2><a name="4.3"></a>4.3  Getting permission (an Access Token) to access ORCID records</h2>
+<h2><a name="5.3"></a>5.3  Getting permission (an Access Token) to access ORCID records</h2>
 <p>To access an ORCID record via the Member API, you first need to get permission from the owner of the record in the form of an Access Token. ORCID uses the standard protocol, OAuth 2.0, to obtain this permission. Generally there are two steps: </p>
 <ol>
 <li>Decide which scopes you are interested in.  Different scopes enable different actions, like read or update.  Have a look at the <a href="https://members.orcid.org/api/orcid-scopes">list of scopes on the ORCID website</a></li>
@@ -267,7 +267,7 @@ https://sandbox.orcid.org/oauth/authorize?client_id=[your client ID]&response_ty
 <li>Clicking <strong>Authorize</strong> will send the user back to the OAuth Playground. A 6-character code will appear in the <strong>Authorization Code </strong>field.<br />&nbsp;</li>
 </ol>
 
-<h3><a name="4.3.2"></a>4.3.2  Exchange the Authorization Code for an Access Token</h3>
+<h3><a name="5.3.2"></a>5.3.2  Exchange the Authorization Code for an Access Token</h3>
 <p>Once you have an  Authorization Code, you can exchange it for an Access Token, which allows you  to read from/write to a user&rsquo;s ORCID record. In a real-world situation, this  exchange would be done by your system, using a programming language such as  PHP, Java, or Ruby on Rails. This call is a RESTful call with information similar to the following</p>
 
 <img src="http://alainna.org/orcid/clip_image036.gif" alt="Screen shot: Google OAuth Playground, Step 2 - exchanging the authorization code for tokens - after exchanging the code, the access and refresh tokens are visible." width="288" align="right" hspace="12" vspace="12" />
@@ -313,7 +313,7 @@ The basic steps for cross linking are:
 
 [//]: # (---------API CREDENTIAL SETUP---------)
 <a name="5-api-credentials"></a>
-# 5. API CREDENTIAL SETUP (30 min)
+# 6. API CREDENTIAL SETUP (30 min)
 _PRESENTATION_
 <!--
 To get started setting up the cross-link process described in the previous section, you'll need to:
@@ -321,7 +321,7 @@ To get started setting up the cross-link process described in the previous secti
 
 **2. Configure identity provider settings for your API credentials**
 -->
-## 5.1 Get ORCID Member API Credentials
+## 6.1 Get ORCID Member API Credentials
 
 To use the ORCID Member API, you'll need credentials consisting of a Client ID (consumer KEY) and Client Secret (consumer SECRET). These work like a username and password that allow your application to access the API.
 
@@ -445,12 +445,12 @@ Starting from the samples provided, create your own custom redirect pages.
 -->
 [//]: # (---------POST AN AFFILIATION TO YOUR UNIVERSITY---------)
 <a name="6-post-affiliation"></a>
-# 6. POST A WORK TO THE REGISTRY (50 min)
+# 7. POST A WORK TO THE REGISTRY (50 min)
 _ACTIVITY_
 
 In this section we will try to add and update a work to your Sandbox test ORCID record using the permission that you have already received from earlier exercises.
 
-<h2><a name="6.1"></a>6.1 Post an work to your ORCID record</h2>
+<h2><a name="7.1"></a>7.1 Post an work to your ORCID record</h2>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>POST</strong>.<br />&nbsp; </li>
 <li>Click <strong>Add headers</strong> and enter the following values:</li>
@@ -483,7 +483,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 </ol>
 <p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
 
-<h2><a name="8.2"></a>8.2 Updating a work</h2>
+<h2><a name="7.2"></a>7.2 Updating a work</h2>
 <p>In a real-world situation, you may need to update a researcher's work. You'll </p>
 <ol>
 <li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>PUT</strong> -- which you need to update the item.<br />&nbsp; </li>
@@ -500,7 +500,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <li>Visit  the public view of your Sandbox record at http://sandbox.orcid.org/[Your  sandbox iD] to see the changes to the work in the user interface.</li>
 </ol>
 
-<h2><a name="8.3"></a>8.3 Searching the registry</h2>
+<h2><a name="7.3"></a>7.3 Searching the registry</h2>
 <p>If you run a repository of some kind, you may be interested in seeing who has claimed things from your repository.  Depending on the identifiers you use (for example, DOIs), this may be possible via the Search API.  </p>
 <p><a href="https://pub.orcid.org/v2.0/identifiers">A list of supported identifier types</a> can be found through the API.  New identifier types are added to the requistry when requested by ORCID members. If you have a DOI prefix or other means of distinguising your identifiers from others, it may even be possible to find all occurances at once.</p>
 <p>There are some detailed <a href="https://members.orcid.org/api/tutorial/search-orcid-registry">instructions on how to search the registry</a>, complete with examples.  The will work in the browser, or via the google playground and can be done against the live or sandbox environment.</p>
@@ -514,7 +514,7 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 
 [//]: # (---------REFERENCE MATERIALS---------)
 <a name="7-reference"></a>
-# 7. REFERENCE MATERIALS
+# 8. REFERENCE MATERIALS
 
 <ul>
 <li>See example implementations and workflow guides <a href="https://members.orcid.org" target="_blank">https://members.orcid.org</a><br />&nbsp;</li>
