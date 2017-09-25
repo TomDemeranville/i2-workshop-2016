@@ -33,7 +33,7 @@ Set up ORCID Member API credentials to enable record updates. We will try it out
 ### [7. ACTIVITY](#7-user-experience): THE USER EXPERIENCE (30 min)
 The technical connection is only part of the overall solution. What should you display to users when they authorize your system to connect with their ORCID records? What you should tell them if they deny your request? Using an ORCID template as a starting point, workshop participants will work together to craft messages and customize templates that will resonate with their audiences.
 -->
-### [7. ACTIVITY](#7-post-affiliation): POST A WORK TO A RECORD (60 min)
+### [7. ACTIVITY](#7-post-affiliation): POST A WORK AND EMPLOYMENT AFFILIATION TO A RECORD (60 min)
 Format data about the person’s contirbutions to your platform and post it to his/her ORCID record. Update the data that you’ve already posted to simulate updating data when an metadata changes.
 
 ### [8. REFERENCE MATERIALS](#8-reference)
@@ -514,7 +514,91 @@ In this section we will try to add and update a work to your Sandbox test ORCID 
 <li>Visit  the public view of your Sandbox record at http://sandbox.orcid.org/[Your  sandbox iD] to see the changes to the work in the user interface.</li>
 </ol>
 
-<h2><a name="7.4"></a>7.4 Searching the registry</h2>
+
+<h2><a name="7.4"></a>7.4 Post an employment affiliation to your ORCID record</h2>
+<p>In this section we will add and update an employment affiliation to your Sandbox test ORCID record using the permission that you have already received from the earlier exercise. Note: It is also possible to post an education affiliation using [different slightly different XML and endpoints](sample-education-affiliation.xml).</p>
+<ol>
+<li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method</strong> to <strong>POST</strong>.<br />&nbsp; </li>
+<li>Click <strong>Add headers</strong> and enter the following values:</li>
+<ul>
+  <li><strong>Header name:</strong> accept</li>
+  <li><strong>Header value:</strong> application/vnd.orcid+xml<br />
+  </li>
+</ul>
+<p><img src="http://alainna.org/orcid/clip_image040.jpg" alt="configure headers" width="464" height="119" border="0" /></p>
+<li>Click <strong>Add</strong> to add another header and enter the following values:</li>
+<ul>
+  <li><strong>Header name:</strong> Content-type</li>
+  <li><strong>Header value:</strong> application/vnd.orcid+xml<br />&nbsp; </li>
+</ul>
+<li>Click <strong>Add</strong> again, then click <strong>Close</strong>.<br />&nbsp; </li>
+<li>In the <strong>Request URI</strong> field, enter https://api.sandbox.orcid.org/v2.0/[orcid-id]/employment,  replacing [orcid-id] with the ORCID iD of the Sandbox record that you created earlier (e.g. https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427/employment)<br />
+  <br />
+  <img src="http://alainna.org/orcid/clip_image042.jpg" alt="configure request URI" width="350" height="195" border="0" border="0" /><br />&nbsp; </li>
+<li>Click <strong>Enter request body</strong>. Here is where you&rsquo;ll enter the XML for the works you wish to  add.<br />&nbsp; </li>
+<li>Copy the XML.<br />&nbsp; </li>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;education:education
+	xmlns:common=&quot;http://www.orcid.org/ns/common&quot; xmlns:education=&quot;http://www.orcid.org/ns/education&quot;
+	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+	xsi:schemaLocation=&quot;http://www.orcid.org/ns/education ../education-2.0.xsd &quot;&gt;	
+	&lt;education:department-name&gt;Department&lt;/education:department-name&gt;
+	&lt;education:role-title&gt;Degree title&lt;/education:role-title&gt;
+	&lt;common:start-date&gt;
+		&lt;common:year&gt;2012&lt;/common:year&gt;
+		&lt;common:month&gt;01&lt;/common:month&gt;
+		&lt;common:day&gt;01&lt;/common:day&gt;
+	&lt;/common:start-date&gt;
+	&lt;education:organization&gt;
+		&lt;common:name&gt;My University&lt;/common:name&gt;
+		&lt;common:address&gt;
+			&lt;common:city&gt;Some City&lt;/common:city&gt;
+			&lt;common:region&gt;Region&lt;/common:region&gt;
+			&lt;common:country&gt;US&lt;/common:country&gt;
+		&lt;/common:address&gt;
+		&lt;common:disambiguated-organization&gt;
+			&lt;common:disambiguated-organization-identifier&gt;XXXXXX&lt;/common:disambiguated-organization-identifier&gt;
+			&lt;common:disambiguation-source&gt;RINGGOLD&lt;/common:disambiguation-source&gt;
+		&lt;/common:disambiguated-organization&gt;
+	&lt;/education:organization&gt;	   	
+&lt;/education:education&gt;
+</pre></li>
+<li>Paste the copied content into the <strong>Request Body </strong>text box.<br />&nbsp; </li>
+<li>Customize the text to reflect your institution. For the disambiguated-organization-identifier, replace XXXXXX with the <a href="http://ido.ringgold.com" target="_blank">Ringgold identifier</a> for your institution.<br />&nbsp; </li>
+<li>Click <strong>Close</strong>.<br />
+  <br />
+  <img src="http://alainna.org/orcid/clip_image044.jpg" alt="" width="500" height="332" border="0" /></li><Br />&nbsp;
+<li>Click <strong>Send the  request</strong>.<br />&nbsp; </li>
+<li>The  results will appear in the <strong>Request/Response</strong> section on the right side of the screen. Scroll to the bottom &ndash; if you see <strong>HTTP/1.1 201 Created</strong>, the affiliation was successfully posted!<br /> &nbsp; 
+  <img src="http://alainna.org/orcid/clip_image046.jpg" alt="HTTP response" width="499" height="280"  border="0" /><br />&nbsp; </li>
+<li>Each item added to the ORCID record has a unique <b>put-code</b> that can be used to read the full metadata of the item, or to edit or delete the item using the client that has added it to the record. The put-code is displayed in the response following <b>Location</b>: https://api.sandbox.orcid.org/v2.0/[orcid-id]/employment/[put-code]. In a real-world situation, your system would store this put-code along with the affiliation data in your database. <br style="clear: all;" /></li>
+<li>Visit the <strong>public view</strong> of your Sandbox record at https://sandbox.orcid.org/[Your sandbox iD] to see the work that you added in the user interface.</li>
+</ol>
+<p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+
+<h2><a name="7.5"></a>7.5 Updating an affiliation</h2>
+<p>In a real-world situation, you may need to update a researcher's affiliation when they finish a degree, change departments, or finish a contract. To update an affiliation, you will require the unique <b>put-code</b> for the affiliation.</p>
+<ol>
+<li>Beneath <strong>Step 3: Configure request to API</strong>, set <strong>HTTP Method </strong>to <strong>PUT</strong>, which is required to update the item.<br />&nbsp; </li>
+<li>At the end of the request URI, add the <b>put-code</b> of the affiliation you just created, e.g. https://api.sandbox.orcid.org/v2.0/0000-0002-3791-8427]/employment/employment/26651. Without the put-code, you cannot update the affiliation.<br />&nbsp; </li>
+<li>Click <strong>Enter request body</strong>. This is where you&rsquo;ll  enter the XML for the work that you wish to edit.<br />&nbsp; </li>
+<li>Go to [sample-employment-affiliation-edit.xml](sample-employment-affiliation-edit.xml) and copy the XML.<br />&nbsp; </li>
+<li>Paste the XML in the <strong>Request Body</strong> field and amend to reflect your institution.<br />
+Tip: The amended area are lines 1 (edit) and lines 13-11 (new data). You can copy line one and use it to replace the first line of your data; enter the unique <b>put-code</b> in place of "put-code="XXXXX"". The new data begins begins with &lt;common:end-date&gt;, and you can can paste it after the &lt;/common:start-date&gt; in the active Request Body.)<br />
+  <img src="http://alainna.org/orcid/clip_image051.jpg" alt="HTTP response" width="500" height="415"  border="0" /><br />&nbsp; </li>
+<li>Click <strong>Close</strong>.<br />&nbsp; </li>
+<li>Click <strong>Send the Request</strong>.<br />&nbsp; </li>
+<li>The  results will appear in the <strong>Request/Response </strong>section on the right side of the screen.  Scroll down &ndash; if you see <b>HTTP/1.1 200 OK</b>, the affiliation was successfully posted!<br />If you receive an error, be sure to check that the headers value under <b>Add headers</b> have not been changed to garbled text, e.g. "application%2Fvnd.orcid%2Bxml".<br />
+  <img src="http://alainna.org/orcid/clip_image053.jpg" alt="HTTP response" width="500" height="170"  border="0" /><br />&nbsp;
+</li>
+<li>Visit  the public view of your Sandbox record at https://sandbox.orcid.org/[Your  sandbox iD] to see the changes to the work in the user interface.</li>
+</ol>
+<p align="right" style="font-size:9px"><a href="#top">-top-</a></p>
+
+
+
+<h2><a name="7.6"></a>7.6 Searching the registry</h2>
 <p>If you run a repository of some kind, you may be interested in seeing who has claimed things from your repository.  Depending on the identifiers you use (for example, DOIs), this may be possible via the Search API.  </p>
 <p><a href="https://pub.orcid.org/v2.0/identifiers">A list of supported identifier types</a> can be found through the API.  New identifier types are added to the requistry when requested by ORCID members. If you have a DOI prefix or other means of distinguising your identifiers from others, it may even be possible to find all occurances at once.</p>
 <p>There are some detailed <a href="https://members.orcid.org/api/tutorial/search-orcid-registry">instructions on how to search the registry</a>, complete with examples.  The will work in the browser, or via the google playground and can be done against the live or sandbox environment.</p>
